@@ -16,5 +16,8 @@ run_sql: init_db
 run_file: init_db
 	docker compose run -e DB_TYPE=file --service-ports api
 
+run_cli: init_db
+	docker compose run --service-ports api bash -c "python app/adaptor/into/cli/user_cli.py"
+
 init_db:
 	docker compose run api bash -c "python app/adaptor/into/cli/init_db.py"

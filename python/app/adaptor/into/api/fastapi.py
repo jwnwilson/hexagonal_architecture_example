@@ -4,8 +4,8 @@ from fastapi import FastAPI, Depends, HTTPException
 
 from app.domain.user_domain import UserCreateDTO, UserDTO, UserEntity
 from app.ports.user_ports import UserDataAdapter
-from app.adaptor.out.user_data.user_sql import SQLAlchemyUserDataAdapter
-from app.adaptor.out.user_data.user_file import FileUserDataAdapter
+from app.adaptor.out.db.user_sql import SQLAlchemyUserDataAdapter
+from app.adaptor.out.file.user_file import FileUserDataAdapter
 
 app = FastAPI(
     title="Hex Example API",

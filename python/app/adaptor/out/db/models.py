@@ -14,7 +14,7 @@ class User(Base):
 
     __tablename__ = "user"
 
-    id = Column(String(255), primary_key=True, default=uuid.uuid4)
+    id = Column(String(255), primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String(255))
     address = Column(Text)
     created_at = Column(DateTime, server_default=func.now())
